@@ -74,6 +74,8 @@ function App() {
                             <Routes>
                                 <Route path={'/'} element={<Example/>}/>
                                 <Route path="/kanban" element={<Board />} />
+                                <Route path="/calendar" element={<div>Hi</div>} />
+                                <Route path="/schedule" element={<div>Hi</div>} />
                             </Routes>
                         </div>
                         {/*<Footer/>*/}

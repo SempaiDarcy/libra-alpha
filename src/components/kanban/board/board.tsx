@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {DndContext, DragEndEvent} from "@dnd-kit/core";
 import {kanbanData, kanbanGrid} from "../../../data/database.ts";
 import {Column} from "../column/column.tsx";
+import {Header} from "../../header/header.tsx";
 
 
 interface Task {
@@ -27,17 +28,23 @@ export const Board = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen">
-            <DndContext onDragEnd={handleDragEnd}>
-                <div style={{display: 'flex', gap: '10px'}}>
-                    {kanbanGrid.map((column) => (
-                        <Column
-                            key={column.keyField}
-                            column={column}
-                            tasks={tasks.filter(task => task.Status === column.keyField)}
-                        />
-                    ))}
-                </div>
-            </DndContext></div>
+        <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+            <div className="flex">
+                <Header category="App" title="Kanban"/>
+            </div>
+            <div className="flex justify-center">
+                <DndContext onDragEnd={handleDragEnd}>
+                    <div style={{display: 'flex', gap: '10px'}}>
+                        {kanbanGrid.map((column) => (
+                            <Column
+                                key={column.keyField}
+                                column={column}
+                                tasks={tasks.filter(task => task.Status === column.keyField)}
+                            />
+                        ))}
+                    </div>
+                </DndContext>
+            </div>
+        </div>
     );
 };
