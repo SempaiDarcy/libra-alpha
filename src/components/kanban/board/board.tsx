@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {DndContext, DragEndEvent} from "@dnd-kit/core";
 import {kanbanData, kanbanGrid} from "../../../data/database.ts";
-import Column from "../column/column.tsx";
+import {Column} from "../column/column.tsx";
 
 
 interface Task {
@@ -12,11 +12,11 @@ interface Task {
     Color: string;
 }
 
-export const Board: React.FC = () => {
+export const Board = () => {
     const [tasks, setTasks] = useState<Task[]>(kanbanData);
 
     const handleDragEnd = (event: DragEndEvent) => {
-        const { active, over } = event;
+        const {active, over} = event;
         if (over && active.id !== over.id) {
             setTasks(prevTasks => {
                 return prevTasks.map(task =>
@@ -27,16 +27,17 @@ export const Board: React.FC = () => {
     };
 
     return (
-        <DndContext onDragEnd={handleDragEnd}>
-            <div style={{ display: 'flex', gap: '10px' }}>
-                {kanbanGrid.map((column) => (
-                    <Column
-                        key={column.keyField}
-                        column={column}
-                        tasks={tasks.filter(task => task.Status === column.keyField)}
-                    />
-                ))}
-            </div>
-        </DndContext>
+        <div className="flex justify-center items-center h-screen">
+            <DndContext onDragEnd={handleDragEnd}>
+                <div style={{display: 'flex', gap: '10px'}}>
+                    {kanbanGrid.map((column) => (
+                        <Column
+                            key={column.keyField}
+                            column={column}
+                            tasks={tasks.filter(task => task.Status === column.keyField)}
+                        />
+                    ))}
+                </div>
+            </DndContext></div>
     );
 };
