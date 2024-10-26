@@ -11,6 +11,9 @@ importers:
       '@syncfusion/ej2':
         specifier: ^19.4.48
         version: 19.4.56
+      '@syncfusion/ej2-react-popups':
+        specifier: ^19.4.52
+        version: 19.4.53
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -555,6 +558,12 @@ packages:
 
   '@syncfusion/ej2-querybuilder@19.4.56':
     resolution: {integrity: sha512-A5hoeys/oIkdRSn+MiW8+CRpBaSIjOykiltT3A8PFk+r+6ScwyMXN2mIGmKb/TVIQ0MTx81ito4Gf1mn8UevrA==}
+
+  '@syncfusion/ej2-react-base@19.4.56':
+    resolution: {integrity: sha512-mi1OKYgGfOe2MKcnMBuioYbdJea4IXCbFvUxG1WEZI5n3t6CxKH4ZWum7IgBO1kcTkaCdhs8Aj0ACFXUFmOwOQ==}
+
+  '@syncfusion/ej2-react-popups@19.4.53':
+    resolution: {integrity: sha512-aKmBrJ5j/8dGWaVnggoPzJRPcDEXZJJPdt6AwCErrWEHCxFwtoBcpE8yON1VRS7Wua+dknZJ0ECQ20VegpCHkA==}
 
   '@syncfusion/ej2-richtexteditor@19.4.56':
     resolution: {integrity: sha512-lKGoAT6Dkdo/LN++84aO8n4F/4MN1xV3NqNAbAI2R13Y8YAPlodVtoRiSAXUjX0p2pGmEu/atR94K3E0/MLbQQ==}
@@ -1971,6 +1980,16 @@ snapshots:
       '@syncfusion/ej2-dropdowns': 19.4.56
       '@syncfusion/ej2-inputs': 19.4.52
       '@syncfusion/ej2-splitbuttons': 19.4.52
+
+  '@syncfusion/ej2-react-base@19.4.56':
+    dependencies:
+      '@syncfusion/ej2-base': 19.4.52
+
+  '@syncfusion/ej2-react-popups@19.4.53':
+    dependencies:
+      '@syncfusion/ej2-base': 19.4.52
+      '@syncfusion/ej2-popups': 19.4.53
+      '@syncfusion/ej2-react-base': 19.4.56
 
   '@syncfusion/ej2-richtexteditor@19.4.56':
     dependencies:
