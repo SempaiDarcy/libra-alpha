@@ -6,7 +6,6 @@ import {TooltipComponent} from '@syncfusion/ej2-react-popups';
 import {useStateContext} from "./hooks/use-state-context.tsx";
 import {ThemeSettings} from "./components/theme/theme-settings.tsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Example} from "./components/example/example.tsx";
 import {Board} from "./components/kanban/board/board.tsx";
 
 function App() {
@@ -35,7 +34,6 @@ function App() {
                     <div className="fixed right-4 bottom-4" style={{zIndex: '1000'}}>
                         <TooltipComponent
                             content="Settings"
-                            position='Top'
                         >
                             <button
                                 type="button"
@@ -72,8 +70,10 @@ function App() {
                             {themeSettings && (<ThemeSettings/>)}
 
                             <Routes>
-                                <Route path={'/'} element={<Example/>}/>
+                                <Route path="/" element={<Board />} />
                                 <Route path="/kanban" element={<Board />} />
+                                <Route path="/calendar" element={<div>Hi</div>} />
+                                <Route path="/schedule" element={<div>Hi</div>} />
                             </Routes>
                         </div>
                         {/*<Footer/>*/}

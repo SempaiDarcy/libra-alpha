@@ -1,5 +1,4 @@
-import React from 'react';
-import { useDroppable } from '@dnd-kit/core';
+import {useDroppable} from '@dnd-kit/core';
 import {Card} from "../card/card.tsx";
 
 
@@ -16,19 +15,18 @@ interface ColumnProps {
     }[];
 }
 
-export const Column: React.FC<ColumnProps> = ({ column, tasks }) => {
-    const { setNodeRef } = useDroppable({
+export const Column = ({column, tasks}: ColumnProps) => {
+    const {setNodeRef} = useDroppable({
         id: column.keyField,
     });
 
     return (
-        <div ref={setNodeRef} style={{ padding: '10px', width: '250px', backgroundColor: '#f5f5f5' }}>
+        <div ref={setNodeRef} style={{padding: '10px', width: '250px', backgroundColor: '#f5f5f5'}}>
             <h3>{column.headerText}</h3>
             {tasks.map(task => (
-                <Card key={task.Id} task={task} />
+                <Card key={task.Id} task={task}/>
             ))}
         </div>
     );
 };
 
-export default Column;
