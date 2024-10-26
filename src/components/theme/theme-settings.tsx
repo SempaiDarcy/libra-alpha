@@ -6,7 +6,7 @@ import {BsCheck} from "react-icons/bs";
 
 export const ThemeSettings = () => {
 
-    const { setColor, currentColor, setThemeSettings } = useStateContext();
+    const { setColor, currentColor, setMode, currentMode, setThemeSettings } = useStateContext();
 
     return (
         <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
@@ -33,8 +33,8 @@ export const ThemeSettings = () => {
                             name="theme"
                             value="Light"
                             className="cursor-pointer"
-                            onChange={()=>{}}
-                            checked={false}
+                            onChange={setMode}
+                            checked={currentMode === 'Light'}
                         />
                         <label htmlFor="light" className="ml-2 text-md cursor-pointer">
                             Light
@@ -46,9 +46,9 @@ export const ThemeSettings = () => {
                             id="dark"
                             name="theme"
                             value="Dark"
-                            onChange={()=>{}}
+                            onChange={setMode}
                             className="cursor-pointer"
-                            checked={false}
+                            checked={currentMode === 'Dark'}
                         />
                         <label htmlFor="dark" className="ml-2 text-md cursor-pointer">
                             Dark
@@ -56,7 +56,8 @@ export const ThemeSettings = () => {
                     </div>
                 </div>
                 <div className="p-4 border-t-1 border-color ml-4">
-                    <p className="font-semibold text-xl ">
+                    <p className="font-semibold text-xl ">Theme Colors</p>
+                    <div className="flex gap-3">
                         {themeColors.map((item, index) => (
                             <TooltipComponent key={index} content={item.name} position="TopCenter">
                                 <div
@@ -66,18 +67,15 @@ export const ThemeSettings = () => {
                                     <button
                                         type="button"
                                         className="h-10 w-10 rounded-full cursor-pointer"
-                                        style={{ backgroundColor: item.color }}
+                                        style={{backgroundColor: item.color}}
                                         onClick={() => setColor(item.color)}
                                     >
-                                        <BsCheck className={`ml-2 text-2xl text-white ${item.color === currentColor ? 'block' : 'hidden'}`} />
+                                        <BsCheck
+                                            className={`ml-2 text-2xl text-white ${item.color === currentColor ? 'block' : 'hidden'}`}/>
                                     </button>
                                 </div>
                             </TooltipComponent>
-                            ))
-                        }
-                        </p>
-                    <div className="flex gap-3">
-
+                        ))}
                     </div>
                 </div>
             </div>
