@@ -53,7 +53,7 @@ function App() {
                     </div>
                     <div>
                         {themeSettings && (<ThemeSettings/>)}
-                        роуты
+                        {/*роуты*/}
                     </div>
                     <Footer/>
                 </div>
