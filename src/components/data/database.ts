@@ -1,5 +1,6 @@
-import { FcTodoList } from "react-icons/fc";
 import React from "react";
+import { FcTodoList } from "react-icons/fc";
+
 export const themeColors = [
     {
         name: 'blue-theme',
