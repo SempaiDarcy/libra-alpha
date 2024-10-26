@@ -1,15 +1,24 @@
 import {useEffect} from "react";
 import {Sidebar} from "./components/sidebar/sidebar.tsx";
 import {Navbar} from "./components/navbar/navbar.tsx";
-import { FiSettings } from 'react-icons/fi';
-import {Footer} from "./components/footer/footer.tsx";
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import {FiSettings} from 'react-icons/fi';
+import {TooltipComponent} from '@syncfusion/ej2-react-popups';
 import {useStateContext} from "./hooks/use-state-context.tsx";
 import {ThemeSettings} from "./components/theme/theme-settings.tsx";
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Example} from "./components/example/example.tsx";
+import {Board} from "./components/kanban/board/board.tsx";
 
 function App() {
-    const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+    const {
+        setCurrentColor,
+        setCurrentMode,
+        currentMode,
+        activeMenu,
+        currentColor,
+        themeSettings,
+        setThemeSettings
+    } = useStateContext();
 
     useEffect(() => {
         const currentThemeColor = localStorage.getItem('colorMode');
@@ -49,15 +58,25 @@ function App() {
                             <Sidebar/>
                         </div>
                     )}
-                    <div className='dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full'>
+                    <div
+                        className={
+                            activeMenu
+                                ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  '
+                                : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
+                        }
+                    >
                         <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
                             <Navbar/>
                         </div>
                         <div>
                             {themeSettings && (<ThemeSettings/>)}
-                            {/*роуты*/}
+
+                            <Routes>
+                                <Route path={'/'} element={<Example/>}/>
+                                <Route path="/kanban" element={<Board />} />
+                            </Routes>
                         </div>
-                        <Footer/>
+                        {/*<Footer/>*/}
                     </div>
                 </div>
             </BrowserRouter>

@@ -20,7 +20,7 @@ export interface UserProfile {
 }
 
 // Интерфейс для задачи
-export interface Todo {
+export interface KanbanData {
     Id: string;
     Title: string;
     Status: string;
@@ -36,7 +36,7 @@ export interface Todo {
 }
 
 // Интерфейс для колонок доски
-export interface TodoGrid {
+export interface KanbanGrid {
     headerText: string;
     keyField: string;
     allowToggle: boolean;
