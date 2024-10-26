@@ -11,6 +11,9 @@ importers:
       '@syncfusion/ej2':
         specifier: ^19.4.48
         version: 19.4.56
+      '@syncfusion/ej2-react-kanban':
+        specifier: ^19.4.48
+        version: 19.4.52
       '@syncfusion/ej2-react-popups':
         specifier: ^19.4.52
         version: 19.4.53
@@ -568,6 +571,9 @@ packages:
 
   '@syncfusion/ej2-react-base@19.4.56':
     resolution: {integrity: sha512-mi1OKYgGfOe2MKcnMBuioYbdJea4IXCbFvUxG1WEZI5n3t6CxKH4ZWum7IgBO1kcTkaCdhs8Aj0ACFXUFmOwOQ==}
+
+  '@syncfusion/ej2-react-kanban@19.4.52':
+    resolution: {integrity: sha512-KZoZ+xloU7Om9IRvfNYEeN8ra5e8Q+fUwZRYm2uVN2gdhaIMhOGQBGTX2VBjyH62s5GNcH8S3RZUF8iITjBkAA==}
 
   '@syncfusion/ej2-react-popups@19.4.53':
     resolution: {integrity: sha512-aKmBrJ5j/8dGWaVnggoPzJRPcDEXZJJPdt6AwCErrWEHCxFwtoBcpE8yON1VRS7Wua+dknZJ0ECQ20VegpCHkA==}
@@ -2006,6 +2012,12 @@ snapshots:
   '@syncfusion/ej2-react-base@19.4.56':
     dependencies:
       '@syncfusion/ej2-base': 19.4.52
+
+  '@syncfusion/ej2-react-kanban@19.4.52':
+    dependencies:
+      '@syncfusion/ej2-base': 19.4.52
+      '@syncfusion/ej2-kanban': 19.4.52
+      '@syncfusion/ej2-react-base': 19.4.56
 
   '@syncfusion/ej2-react-popups@19.4.53':
     dependencies:
