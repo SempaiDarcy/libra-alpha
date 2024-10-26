@@ -7,6 +7,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import {useStateContext} from "../../hooks/use-state-context.tsx";
 import avatar from '../../assets/avatar.jpg'
+import UserProfile from "../user-profile/user-profile.tsx";
 interface NavButtonProps {
     title: string;
     customFunc: () => void;
@@ -77,6 +78,7 @@ export const Navbar = () => {
                         <MdKeyboardArrowDown className="text-gray-400 text-14" />
                     </div>
                 </TooltipComponent>
+                {isClicked.userProfile && (<UserProfile />)}
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import {Link, NavLink} from 'react-router-dom';
 import {GiClockwork} from "react-icons/gi";
 import {useStateContext} from "../../hooks/use-state-context.tsx";
-import {links} from "../data/database.ts";
+import {links} from "../../data/database.ts";
 
 export const Sidebar = () => {
     const {activeMenu, setActiveMenu, screenSize, currentColor} = useStateContext();

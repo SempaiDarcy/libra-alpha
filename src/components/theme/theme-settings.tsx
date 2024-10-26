@@ -1,6 +1,6 @@
 import { MdOutlineCancel } from 'react-icons/md';
 import {useStateContext} from "../../hooks/use-state-context.tsx";
-import {themeColors} from "../data/database.ts";
+import {themeColors} from "../../data/database.ts";
 import {TooltipComponent} from "@syncfusion/ej2-react-popups";
 import {BsCheck} from "react-icons/bs";
 
