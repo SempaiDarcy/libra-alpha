@@ -1,3 +1,5 @@
+import { FcTodoList } from "react-icons/fc";
+import React from "react";
 export const themeColors = [
     {
         name: 'blue-theme',
@@ -22,5 +24,17 @@ export const themeColors = [
     {
         color: '#FB9678',
         name: 'orange-theme',
+    },
+];
+
+export const links = [
+    {
+        title: 'Apps',
+        links: [
+            {
+                name: 'todolist',
+                icon: React.createElement(FcTodoList)
+            },
+        ],
     },
 ];
